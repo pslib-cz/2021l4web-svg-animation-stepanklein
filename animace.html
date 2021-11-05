@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        svg {
+          width: 100px;
+         height: 100px;
+         margin: 20px ;
+         display:inline-block;
+            }
+       :root {
+            --circleLenght: 276.32;
+        }
+        .loading__circle {
+            stroke-dasharray: calc(var(--circleLenght) * 0.5);
+            stroke-dashoffset: var(--circleLenght);
+            animation: strokeAnimation 2s ease forwards;
+            animation-iteration-count: infinite;
+            
+        }
+        
+        @keyframes strokeAnimation {
+            0% {
+                stroke-dashoffset: 0 ;
+                stroke-dasharray: calc(var(--circleLenght) * .5) calc(var(--circleLenght) * .5)
+            }
+           
+            100% {
+                stroke-dashoffset:  var(--circleLenght) ;
+                stroke-dasharray: calc(var(--circleLenght) * 0.5) calc(var(--circleLenght) * 0.5)
+               
+            }
+        }
+    </style>
+</head>
+<body>
+    <svg class="loading" version="1.1" id="L3" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 100 100" >
+<circle class="loading__circle" fill="none" stroke="#A54657" stroke-width="5" cx="50" cy="50" r="44" style="opacity:0.5;"/>
+  <circle fill="#A54657"  cx="8" cy="54" r="6" >
+    <animateTransform
+      attributeName="transform"
+      dur="2s"
+      type="rotate"
+      from="0 50 48"
+      to="360 50 52"
+      repeatCount="indefinite" />
+    
+  </circle>
+</svg>
+
+<path d="M350 0 L275 90 L425 90 L350 0 M312.5 45 L387.5 45 L350 90 L312.5 45"  
+      fill="none" stroke-width="1" stroke="#e74c3c"/>
+  
+</body>
+</html>
